@@ -6,7 +6,7 @@
 #    By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/06 18:10:42 by ikhadem           #+#    #+#              #
-#    Updated: 2021/10/06 18:27:57 by ikhadem          ###   ########.fr        #
+#    Updated: 2021/10/07 11:55:59 by ikhadem          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,12 +18,12 @@ NAME 		=	da_brick
 CXX 		=	clang++
 FLAG		=	-Wall -Wextra -Werror -std=c++98
 
-HDR			=	Contact.hpp \
-				Phonebook.hpp \
+HDR			=	Contact.class.hpp \
+				Phonebook.class.hpp \
 
-SRC			=	main.c \
-				Contact.cpp \
-				Phonebook.cpp \
+SRC			=	main.cpp \
+				Contact.class.cpp \
+				Phonebook.class.cpp \
 
 OBJ			=	$(SRC:.cpp=.o)
 
