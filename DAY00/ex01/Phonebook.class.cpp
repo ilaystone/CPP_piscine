@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 18:15:16 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/10/07 13:21:26 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/10/08 09:40:15 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,25 +36,10 @@ void			displayMessage(std::string an)
 
 void			displayHomeScreen(void)
 {
-	std::cout << "+";
-	std::cout << std::setw(25) << std::setfill('*');
-	std::cout << "+" << std::endl;
-	std::cout << "|" << std::setfill(' ');
-	std::cout << std::setw(24);
-	std::cout << std::left << " ADD";
-	std::cout << "|" << std::endl;
-	std::cout << "|";
-	std::cout << std::setw(24);
-	std::cout << " SEARCH" << std::left;
-	std::cout << "|" << std::endl;
-	std::cout << "|";
-	std::cout << std::setw(24);
-	std::cout << " EXIT" << std::left;
-	std::cout << "|" << std::endl << std::right;
-	std::cout << "+";
-	std::cout << std::setw(25) << std::setfill('*');
-	std::cout << "+" << std::endl;
-	std::cout << std::setfill(' ') << std::endl;
+	std::cout << "Available Commands:" << std::endl;
+	std::cout << "ADD" << std::endl;
+	std::cout << "SEARCH" << std::endl;
+	std::cout << "EXIT" << std::endl;
 	std::cout << "What do you want to do?..:" << std::endl;
 	return ;
 }
@@ -72,7 +57,7 @@ Contact			Phonebook::promptContactInputs()
 {
 	Contact		c;
 
-	std::cout << "**** Input Data : ***" << std::endl << std::endl;
+	std::cout << "Input Contact :" << std::endl << std::endl;
 	c.SetFirstName(promptData("First Name"));
 	c.SetLastName(promptData("Last Name"));
 	c.SetNickname(promptData("Nickname"));
@@ -99,7 +84,46 @@ t_commands		Phonebook::promptCommand(void)
 void			Phonebook::execute_command(t_commands c)
 {
 	if (c == p_add)
-		 
+		execute_add();
+	else if (c == p_search)
+		execute_search();
+	else if (c == p_exit)
+		exit(0);
+	else
+		std::cout << "WRONG COMMAND!!" << std::endl;
+	return ;
+}
+
+void			Phonebook::execute_add(void)
+{
+	this->setContact(this->promptContactInputs());
+	return ;
+}
+
+void		Phonebook::execute_search(void)
+{
+	std::string		input;
+	int				index;
+
+	for (int i = 0; i < this->_index; i++)
+	{
+		std::cout << std::setw(10) << i;
+		this->_list[i].ContactDisplay();
+	}
+	std::cout << "What Contact To Display\n";
+	std::getline(std::cin, input);
+	index = std::stoi(input);
+	if (index + 1 > this->_index)
+	{
+		std::cout << "you only have " << this->_index;
+		std::cout << " contacts" << std::endl;
+	}
+	else if (index >= 0 && index < 8)
+	{
+		this->_list[index].ContactFullDisplay();
+	}
+	else
+		std::cout << "this application only stores 8 contacts" << std::endl;
 	return ;
 }
 
@@ -120,6 +144,7 @@ Phonebook::~Phonebook()
 
 void		Phonebook::StartLine(void)
 {
-	this->execute_command(this->promptCommand());
+	while (1)
+		this->execute_command(this->promptCommand());;
 	return ;
 }

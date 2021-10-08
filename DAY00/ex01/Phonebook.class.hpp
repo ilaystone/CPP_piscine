@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 18:14:30 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/10/07 13:15:42 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/10/08 09:16:52 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,9 @@ private:
 	Contact			promptContactInputs(void);
 	t_commands		promptCommand(void);
 	void			execute_command(t_commands c);
+	void			execute_add(void);
+	void			execute_search(void);
+
 public:
 	Phonebook(void);
 	~Phonebook();
