@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/10/08 15:22:26 by ikhadem           #+#    #+#              #
-#    Updated: 2021/10/11 07:57:06 by ikhadem          ###   ########.fr        #
+#    Created: 2021/10/11 07:59:04 by ikhadem           #+#    #+#              #
+#    Updated: 2021/10/11 08:58:56 by ikhadem          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,18 +14,13 @@ GREEN		=	\e[38;5;118m
 RESET		=	\e[0m
 _SUCCESS	=	[$(GREEN)SUCCESS$(RESET)]
 
-NAME 		=	Violence
+NAME 		=	FindAndReplace
 CXX 		=	clang++
 FLAG		=	-Wall -Wextra -Werror -std=c++98
 
 SRC			=	main.cpp \
-				Weapon.cpp \
-				HumanA.cpp \
-				HumanB.cpp \
 
-HDR			=	Weapon.hpp \
-				HumanA.hpp \
-				HumanB.hpp \
+HDR			=	\
 
 OBJ			=	$(SRC:.cpp=.o)
 
