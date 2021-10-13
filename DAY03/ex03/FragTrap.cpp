@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 10:48:11 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/10/13 11:42:23 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/10/13 13:05:34 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,15 @@ FragTrap	&FragTrap::operator=(FragTrap const &rhs)
 	this->setEnergyPoints(rhs.getEnergyPoints());
 	this->setAttackDamage(rhs.getAttackDamage());
 	return (*this);
+}
+
+void			FragTrap::attack(std::string const &target)
+{
+	std::cout << "FragTrap " << this->getName();
+	std::cout << " attack " << target;
+	std::cout << ", causing " << this->getAttackDamage();
+	std::cout << " points of dammage!" << std::endl;
+	return ;
 }
 
 void		FragTrap::highFivesGuys(void) const
