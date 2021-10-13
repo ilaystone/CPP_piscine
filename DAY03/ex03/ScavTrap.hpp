@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 09:09:03 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/10/13 13:04:53 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/10/13 15:03:34 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 #include "ClapTrap.hpp"
 #include <string>
 #include <iostream>
+
+# define SCAVTRAP_HITPOINTS 100
+# define SCAVTRAP_ENERGYPOINTS 50
+# define SCAVTRAP_ATTACKDAMMAGE 20
 
 class ScavTrap : virtual public ClapTrap
 {

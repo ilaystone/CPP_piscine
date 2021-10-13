@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 10:48:11 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/10/13 13:05:34 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/10/13 15:03:08 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ FragTrap::FragTrap(void) : ClapTrap("Default")
 	return ;
 }
 
-FragTrap::FragTrap(std::string const &name) : ClapTrap(name, 100, 100, 30)
+FragTrap::FragTrap(std::string const &name) :
+ClapTrap(name, FRAGTRAP_HITPOINTS, FRAGTRAP_ENERGYPOINTS, FRAGTRAP_ATTACKDAMMAGE)
 {
 	std::cout << "FragTrap Name Parameter Constructor Called" << std::endl;
 	return ;

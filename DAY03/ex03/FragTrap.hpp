@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 10:47:16 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/10/13 13:04:51 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/10/13 15:02:16 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 #include "ClapTrap.hpp"
 #include <string>
 #include <iostream>
+
+# define FRAGTRAP_HITPOINTS 100
+# define FRAGTRAP_ENERGYPOINTS 100
+# define FRAGTRAP_ATTACKDAMMAGE 30
 
 class FragTrap : virtual public ClapTrap
 {

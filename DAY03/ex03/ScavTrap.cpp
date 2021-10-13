@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 09:09:44 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/10/13 13:05:27 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/10/13 15:03:57 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ ScavTrap::ScavTrap(void) : ClapTrap("Default")
 	return ;
 }
 
-ScavTrap::ScavTrap(std::string const &name) : ClapTrap(name, 100, 50, 20)
+ScavTrap::ScavTrap(std::string const &name) :
+ClapTrap(name, SCAVTRAP_HITPOINTS, SCAVTRAP_ENERGYPOINTS, SCAVTRAP_ATTACKDAMMAGE)
 {
 	std::cout << "ScavTrap Name Parameter constructor Called" << std::endl;
 	return;
