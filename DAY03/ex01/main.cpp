@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 09:07:51 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/10/13 10:40:49 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/10/13 10:48:30 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,5 @@ int		main(void)
 	b.attack(c.getName());
 	c.takeDammage(b.getAttackDamage());
 	c.beRepaired(c.getEnergyPoints());
-	delete d;
 	return (0);
 }

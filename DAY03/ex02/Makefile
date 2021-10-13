@@ -6,7 +6,7 @@
 #    By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 08:30:28 by ikhadem           #+#    #+#              #
-#    Updated: 2021/10/13 10:27:32 by ikhadem          ###   ########.fr        #
+#    Updated: 2021/10/13 10:57:43 by ikhadem          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,16 +16,18 @@ RESET		=	\e[0m
 _SUCCESS	=	[$(GREEN)SUCCESS$(RESET)]
 _INFO		=	[$(OKCYAN)$(NAME)$(RESET)]
 
-NAME 		=	Serana
+NAME 		=	Fraggy
 CXX 		=	clang++
 FLAG		=	-Wall -Wextra -Werror -std=c++98
 
 SRC			=	main.cpp \
 				ClapTrap.cpp \
 				ScavTrap.cpp \
+				FragTrap.cpp \
 
 HDR			=	ClapTrap.hpp \
 				ScavTrap.hpp \
+				FragTrap.hpp \
 
 OBJ			=	$(SRC:.cpp=.o)
 

@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 09:07:51 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/10/13 10:57:22 by ikhadem          ###   ########.fr       */
+/*   Created: 2021/10/13 10:47:16 by ikhadem           #+#    #+#             */
+/*   Updated: 2021/10/13 10:54:33 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
+
 #include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include <string>
+#include <iostream>
 
-int		main(void)
+class FragTrap : public ClapTrap
 {
-	ClapTrap	a("Zeus");
-	ScavTrap	b("Metis");
-	FragTrap	c("Cerberos");
+private:
+	FragTrap(void);
+public:
+	FragTrap(std::string const &name);
+	FragTrap(FragTrap const &rhs);
+	~FragTrap(void);
 
-	c.attack(a.getName());
-	a.attack(b.getName());
-	b.beRepaired(b.getEnergyPoints());
-	c.highFivesGuys();
-	b.guardGate();
-	return (0);
-}
+	FragTrap	&operator=(FragTrap const &rhs);
+	void		highFivesGuys(void) const;
+};
+
+#endif
