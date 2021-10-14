@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 15:17:27 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/10/14 07:57:28 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/10/13 16:42:45 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,12 @@ Animal		&Animal::operator=(Animal const &rhs)
 std::string	Animal::getType(void) const
 {
 	return (this->_type);
+}
+
+void		Animal::setType(std::string const &name)
+{
+	this->_type = name;
+	return ;
 }
 
 void		Animal::makeSound() const

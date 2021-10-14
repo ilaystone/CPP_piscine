@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 15:37:15 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/10/13 15:41:11 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/10/14 07:57:37 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ class Cat : public Animal
 {
 public:
 	Cat(void);
-	Cat(std::string const &name);
 	Cat(Cat const &Cat);
 	~Cat(void);
 

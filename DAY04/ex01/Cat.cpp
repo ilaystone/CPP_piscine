@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 15:20:24 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/10/14 07:57:18 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/10/14 07:58:30 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Cat::Cat(void) : Animal("Cat")
 {
 	std::cout << "Cat Default Construcor Called" << std::endl;
+	this->_brain = new Brain();
 	return ;
 }
 
@@ -27,6 +28,7 @@ Cat::Cat(Cat const &rhs)
 
 Cat::~Cat(void)
 {
+	delete this->_brain;
 	std::cout << "Cat destructor Called" << std::endl;
 	return ;
 }
@@ -34,7 +36,9 @@ Cat::~Cat(void)
 Cat		&Cat::operator=(Cat const &rhs)
 {
 	std::cout << "Cat Assignation Operator Called" << std::endl;
-	this->_type = rhs.getType();
+	this->_type = rhs._type;
+	this->_brain = new Brain();
+	*this->_brain = *rhs._brain;
 	return (*this);
 }
 

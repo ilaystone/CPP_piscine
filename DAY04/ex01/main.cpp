@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 15:21:04 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/10/14 07:57:46 by ikhadem          ###   ########.fr       */
+/*   Created: 2021/10/13 16:04:41 by ikhadem           #+#    #+#             */
+/*   Updated: 2021/10/14 08:01:31 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
-
 #include "Animal.hpp"
-#include <string>
-#include <iostream>
+#include "Dog.hpp"
+#include "Cat.hpp"
 
-class Dog : public Animal
+int		main(void)
 {
-public:
-	Dog(void);
-	Dog(Dog const &dog);
-	~Dog(void);
+	const Animal	*j = new Dog();
+	const Animal	*i = new Cat();
+	delete j;
+	delete i;
 
-	Dog				&operator=(Dog const &rhs);
+	std::cout << std::endl << std::endl << std::endl;
 
-	virtual void	makeSound(void) const;
-};
+	Animal			*arr[10];
 
-#endif
+	for (int i = 0; i < 5; i++)
+		arr[i] = new Cat();
+	for (int i = 5; i < 10; i++)
+		arr[i] = new Dog();
+
+	for (int i = 0; i < 10; i++)
+		delete	arr[i];
+	return (0);
+}
