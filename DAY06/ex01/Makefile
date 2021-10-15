@@ -6,7 +6,7 @@
 #    By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/15 13:53:07 by ikhadem           #+#    #+#              #
-#    Updated: 2021/10/15 13:53:08 by ikhadem          ###   ########.fr        #
+#    Updated: 2021/10/15 18:52:28 by ikhadem          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,14 +16,13 @@ RESET		=	\e[0m
 _SUCCESS	=	[$(GREEN)SUCCESS$(RESET)]
 _INFO		=	[$(OKCYAN)$(NAME)$(RESET)]
 
-NAME 		=	ScalarConversion
+NAME 		=	Serialization
 CXX 		=	clang++
 FLAG		=	-Wall -Wextra -Werror -std=c++98
 
 SRC			=	main.cpp \
-				Converter.cpp \
 
-HDR			=	Converter.hpp\
+HDR			=	\
 
 OBJ			=	$(SRC:.cpp=.o)
 
