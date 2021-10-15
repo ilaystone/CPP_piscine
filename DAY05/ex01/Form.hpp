@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 11:42:55 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/10/14 12:16:11 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/10/15 10:09:20 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ public:
 			return ("Idiot is of a Grade Too Low");
 		}
 	};
-	Form(std::string const &name, int const gts, int const gte, bool is);
+	Form(std::string const &name, int const gts, int const gte);
 	~Form(void);
 
 	std::string	const		&getName(void) const;
