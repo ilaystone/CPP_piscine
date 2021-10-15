@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 13:53:10 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/10/15 18:55:09 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/10/15 19:12:40 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,6 @@ int		main(void)
 	std::cout << de->name << std::endl;
 	std::cout << de->age << std::endl;
 	std::cout << (de->is_alive ? "true" : "false") << std::endl;
+	delete test;
 	return (0);
 }
