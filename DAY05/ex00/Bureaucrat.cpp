@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 10:57:15 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/10/14 11:23:13 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/10/15 08:42:23 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,14 @@
 
 Bureaucrat::Bureaucrat(std::string const &name, int grade) : _name(name)
 {
-	this->setGrade(grade);
+	try
+	{
+		this->setGrade(grade);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 	return ;
 }
 
@@ -46,12 +53,26 @@ void			Bureaucrat::setGrade(int grade)
 
 void			Bureaucrat::incrementGrade(void)
 {
-	setGrade(this->_grade - 1);
+	try
+	{
+		setGrade(this->_grade - 1);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 	return ;
 }
 
 void			Bureaucrat::decrementGrade(void)
 {
-	setGrade(this->_grade + 1);
+	try
+	{
+		setGrade(this->_grade + 1);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 	return ;
 }
