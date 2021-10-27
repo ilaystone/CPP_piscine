@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 18:15:16 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/10/08 09:40:15 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/10/27 16:50:11 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void		Phonebook::setContact(Contact c)
 {
 	_list[_index] = c;
 	_index = (_index + 1) % MAX_CONTACTS;
+	_size += ((_size == 8) ? 0 : 1);
 	return ;
 }
 
@@ -88,7 +89,9 @@ void			Phonebook::execute_command(t_commands c)
 	else if (c == p_search)
 		execute_search();
 	else if (c == p_exit)
-		exit(0);
+		std::exit(0);
+	else if (std::cin.eof())
+		std::exit(1);
 	else
 		std::cout << "WRONG COMMAND!!" << std::endl;
 	return ;
@@ -105,25 +108,32 @@ void		Phonebook::execute_search(void)
 	std::string		input;
 	int				index;
 
-	for (int i = 0; i < this->_index; i++)
+	for (int i = 0; i < this->_size; i++)
 	{
 		std::cout << std::setw(10) << i;
 		this->_list[i].ContactDisplay();
 	}
 	std::cout << "What Contact To Display\n";
 	std::getline(std::cin, input);
-	index = std::stoi(input);
-	if (index + 1 > this->_index)
+	try
 	{
-		std::cout << "you only have " << this->_index;
+		if (std::cin.eof())
+			throw std::exception();
+		index = std::stoi(input);
+	}
+	catch (...)
+	{
+		std::exit(1);
+	}
+	if (index > 8)
+		std::cout << "this application only stores "<< MAX_CONTACTS << " contacts" << std::endl;
+	else if (index + 1 > this->_size)
+	{
+		std::cout << "you only have " << this->_size;
 		std::cout << " contacts" << std::endl;
 	}
 	else if (index >= 0 && index < 8)
-	{
 		this->_list[index].ContactFullDisplay();
-	}
-	else
-		std::cout << "this application only stores 8 contacts" << std::endl;
 	return ;
 }
 

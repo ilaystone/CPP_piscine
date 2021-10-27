@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 09:51:45 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/10/08 13:06:08 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/10/27 16:52:41 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	_timeStamp()
 	std::cout << std::setw(2) << std::setfill('0') << l->tm_hour;
 	std::cout << std::setw(2) << std::setfill('0')<< l->tm_min;
 	std::cout << std::setw(2) << std::setfill('0')<< l->tm_sec;
-	std::cout << "]";
+	std::cout << "] ";
 }
 
 Account::Account( int initial_deposit )

@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 18:14:30 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/10/08 09:16:52 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/10/27 16:43:55 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ class Phonebook
 {
 private:
 	int			_index;
-	Contact		_list[8];
+	int			_size;
+	Contact		_list[MAX_CONTACTS];
 
 	void			setContact(Contact c);
 	Contact			promptContactInputs(void);
