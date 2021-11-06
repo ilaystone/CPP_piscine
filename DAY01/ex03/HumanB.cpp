@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 15:35:30 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/10/08 15:57:45 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/11/06 08:44:03 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	HumanB::attack(void) const
 	if (this->_weapon)
 		std::cout << this->_weapon->getType();
 	else
-		std::cout << "AIR";
+		std::cout << "bare fists";
 	std::cout << std::endl;
 	return ;
 }
