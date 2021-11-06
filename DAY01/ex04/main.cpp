@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 07:59:21 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/10/11 09:09:59 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/11/06 09:01:39 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,19 @@ int		main(int ac, char **av)
 			sub_data.clear();
 			from = 0;
 			to = data.find(to_find);
-			while (to != std::string::npos)
+			std::cout << from << " " << to << std::endl;
+			if (to == std::string::npos)
+				sub_data = data;
 			{
-				sub_data.append(data.substr(from, to - from)); 
-				sub_data.append(to_replace);
-				from = to + to_find.size();
-				to = data.find(to_find, from);
+				while (to != std::string::npos)
+				{
+					sub_data.append(data.substr(from, to - from));
+					sub_data.append(to_replace);
+					from = to + to_find.size();
+					to = data.find(to_find, from);
+				}
+				if (to == std::string::npos)
+					sub_data.append(data.substr(from, to - from));
 			}
 			out_file << sub_data << std::endl;
 		}
