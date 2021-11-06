@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 14:57:27 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/10/08 15:12:09 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/11/06 08:04:20 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@ int		main(void)
 {
 	Zombie		*horde;
 	int			n;
+	int			i;
 
 	n = 10;
-	horde = zombieHorde(n, "ATHIA");
+	i = 1;
+	horde = zombieHorde(n, "ATHIA" + std::to_string(i++));
 	for (int i = 0; i < n; i++)
 		horde[i].announce();
 	delete [] horde;
