@@ -6,7 +6,7 @@
 #    By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/06 11:25:44 by ikhadem           #+#    #+#              #
-#    Updated: 2021/11/06 11:26:39 by ikhadem          ###   ########.fr        #
+#    Updated: 2021/11/07 14:34:49 by ikhadem          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ RESET		=	\e[0m
 _SUCCESS	=	[$(GREEN)SUCCESS$(RESET)]
 _INFO		=	[$(OKCYAN)$(NAME)$(RESET)]
 
-NAME 		=	TemplateBasics
+NAME 		=	IterTemplate
 CXX 		=	clang++
 FLAG		=	-Wall -Wextra -Werror -std=c++98
 
