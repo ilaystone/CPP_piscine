@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 07:59:21 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/11/06 09:01:39 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/11/06 10:31:09 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int		main(int ac, char **av)
 			std::cout << from << " " << to << std::endl;
 			if (to == std::string::npos)
 				sub_data = data;
+			else
 			{
 				while (to != std::string::npos)
 				{
