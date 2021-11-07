@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/06 09:35:30 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/11/06 11:27:28 by ikhadem          ###   ########.fr       */
+/*   Created: 2021/11/06 11:26:43 by ikhadem           #+#    #+#             */
+/*   Updated: 2021/11/07 09:22:46 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "whatever.template.hpp"
+#include "iter.template.hpp"
 #include <iostream>
-#include <string>
+#include <string.h>
 
 class Number
 {
@@ -49,27 +49,29 @@ std::ostream&	operator<<(std::ostream& os, const Number &rhs)
 	return (os);
 }
 
+void	fct1(int &i)
+{
+	i = i * 2;
+}
+
+template<typename T>
+void	disp(T v)
+{
+	std::cout << v << std::endl;
+}
+
 int		main(void)
 {
-	int a = 2;
-	int b = 3;
-	::swap( a, b );
-	std::cout << "a = " << a << ", b = " << b << std::endl;
-	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
-	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
-	std::cout << std::endl << std::endl;
-	std::string c = "chaine1";
-	std::string d = "chaine2";
-	::swap(c, d);
-	std::cout << "c = " << c << ", d = " << d << std::endl;
-	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
-	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
-	std::cout << std::endl << std::endl;
-	Number		e("Two", 2);
-	Number		f("Three", 3);
-	::swap(e, f);
-	std::cout << "e = " << e << ", f = " << f << std::endl;
-	std::cout << "min( e, f ) = " << ::min( e, f ) << std::endl;
-	std::cout << "max( e, f ) = " << ::max( e, f ) << std::endl;
+	int a[] = {1, 2, 3, 4, 5};
+	::iter(a, 5, &fct1);
+	::iter(a, 5, &disp);
+	std::cout << std::endl;
+	Number	b[5];
+	b[0] = Number("one", 1);
+	b[1] = Number("two", 2);
+	b[2] = Number("three", 3);
+	b[3] = Number("four", 4);
+	b[4] = Number("five", 5);
+	::iter(b, 5, &disp);
 	return (0);
 }
