@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 10:48:11 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/10/13 11:42:23 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/11/07 14:19:53 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ FragTrap	&FragTrap::operator=(FragTrap const &rhs)
 
 void		FragTrap::highFivesGuys(void) const
 {
-	std::cout << "FragTrap high fives comrades for good effort" << std::endl;
+	std::cout << "FragTrap ";
+	std::cout << this->getName();
+	std::cout << " high fives comrades for good effort" << std::endl;
 	return ;
 }

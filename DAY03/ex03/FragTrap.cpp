@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 10:48:11 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/10/13 15:03:08 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/11/07 14:21:42 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void			FragTrap::attack(std::string const &target)
 
 void		FragTrap::highFivesGuys(void) const
 {
-	std::cout << "FragTrap high fives comrades for good effort" << std::endl;
+	std::cout << "FragTrap " << this->getName();
+	std::cout << " high fives comrades for good effort" << std::endl;
 	return ;
 }
