@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 15:13:41 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/10/13 15:50:17 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/11/11 00:10:01 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int		main(void)
 	i->makeSound();
 	j->makeSound();
 	meta->makeSound();
-	delete i;
-	delete j;
 	delete meta;
+	delete j;
+	delete i;
 	return (0);
 }

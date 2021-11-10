@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 16:04:41 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/10/14 08:24:02 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/11/11 00:17:19 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,10 @@ int		main(void)
 	delete j;
 	delete i;
 
-	Cat		c;
-	Cat		b(c);
+	Cat				*c1 = new Cat();
+	Cat				*c2 = new Cat(*c1);
+	delete c1;
+	delete c2;
 
 	std::cout << std::endl << std::endl << std::endl;
 
