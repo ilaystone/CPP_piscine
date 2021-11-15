@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 11:42:55 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/10/15 10:09:20 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/11/15 23:21:24 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,13 @@ private:
 	int	const				_grade_to_sign;
 	int	const				_grade_to_excecute;
 	bool					_is_signed;
-	Form(void);
 public:
 	class GradeTooHighException : public std::exception
 	{
 	public:
 		virtual const char	*what() const throw()
 		{
-			return ("Idiot is of a Grade Too High");
+			return ("FORM: garde too high");
 		}
 	};
 	class GradeTooLowException : public std::exception
@@ -41,18 +40,20 @@ public:
 	public:
 		virtual const char	*what() const throw()
 		{
-			return ("Idiot is of a Grade Too Low");
+			return ("FORM: garde too low");
 		}
 	};
+	Form(Form const &rhs);
 	Form(std::string const &name, int const gts, int const gte);
 	~Form(void);
+
+	Form					&operator=(Form const &rhs);
 
 	std::string	const		&getName(void) const;
 	int 					getGradeToSign(void) const;
 	int 					getGradeToExecute(void) const;
 	bool					getIsSigned(void) const;
 	void					setIsSigned(bool is);
-
 	void					beSigned(Bureaucrat const &b);
 };
 

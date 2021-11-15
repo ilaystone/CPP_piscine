@@ -6,11 +6,20 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 11:53:21 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/10/15 10:07:24 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/11/15 23:14:35 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+
+Form::Form(Form const &rhs) :
+_name(rhs.getName()),
+_grade_to_sign(rhs.getGradeToSign()),
+_grade_to_excecute(rhs.getGradeToExecute()),
+_is_signed(rhs.getIsSigned())
+{
+	return ;
+}
 
 Form::Form(std::string const &name, int const gts, int const gte) :
 _name(name),
@@ -28,6 +37,15 @@ _is_signed(false)
 Form::~Form(void)
 {
 	return ;
+}
+
+Form					&Form::operator=(Form const &rhs)
+{
+	const_cast<std::string &>(this->_name) = rhs.getName();
+	const_cast<int &>(this->_grade_to_sign) = rhs.getGradeToSign();
+	const_cast<int &>(this->_grade_to_excecute) = rhs.getGradeToExecute();
+	this->_is_signed = rhs.getIsSigned();
+	return (*this);
 }
 
 std::string const		&Form::getName(void) const
@@ -72,7 +90,6 @@ std::ostream	&operator<<(std::ostream &out, const Form &rhs)
 	out << "Form: " << rhs.getName() << std::endl;
 	out << "\tGrade to sign: " << rhs.getGradeToSign() << std::endl;
 	out << "\tGrade to execute: " << rhs.getGradeToExecute() << std::endl;
-	out << "\tis Signed ?: " << (rhs.getIsSigned() ? "" : "Not ") << "signed";
-	out << std::endl;
+	out << "\tis Signed ?: " << std::boolalpha << rhs.getIsSigned() << " ";
 	return (out);
 }
