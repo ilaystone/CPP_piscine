@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 10:57:15 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/10/15 10:06:13 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/11/15 01:49:56 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,22 @@ Bureaucrat::Bureaucrat(std::string const &name, int grade) : _name(name)
 	return ;
 }
 
+Bureaucrat::Bureaucrat(Bureaucrat const &rhs)
+{
+	*this = rhs;
+	return ;
+}
+
 Bureaucrat::~Bureaucrat(void)
 {
 	return ;
+}
+
+Bureaucrat		&Bureaucrat::operator=(Bureaucrat const &rhs)
+{
+	const_cast<std::string &>(this->_name) = rhs.getName();
+	this->_grade = rhs.getGrade();
+	return (*this);
 }
 
 std::string		Bureaucrat::getName(void) const
@@ -55,4 +68,10 @@ void			Bureaucrat::decrementGrade(void)
 {
 	setGrade(this->_grade + 1);
 	return ;
+}
+
+std::ostream	&operator<<(std::ostream &os, Bureaucrat const &rhs)
+{
+	os << rhs.getName() << ", bureaucrat grade:" << rhs.getGrade();
+	return (os);
 }
