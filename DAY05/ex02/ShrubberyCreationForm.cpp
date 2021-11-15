@@ -6,22 +6,29 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 12:51:25 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/10/15 08:20:43 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/11/16 00:44:10 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm(void) :
-Form("ShrubberyCreationForm", 145, 137, false)
+Form("ShrubberyCreationForm", 145, 137)
 {
 	return ;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string const &target) :
-Form("ShrubberyCreationForm", 145, 137, false),
+Form("ShrubberyCreationForm", 145, 137),
 _target(target)
 {
+	return ;
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &rhs) :
+Form("ShrubberyCreationForm", 145, 137)
+{
+	*this = rhs;
 	return ;
 }
 
@@ -30,7 +37,19 @@ ShrubberyCreationForm::~ShrubberyCreationForm(void)
 	return ;
 }
 
-void		ShrubberyCreationForm::action(void) const
+ShrubberyCreationForm		&ShrubberyCreationForm::operator=(ShrubberyCreationForm const &rhs)
+{
+	this->setIsSigned(rhs.getIsSigned());
+	this->_target = rhs.getTarget();
+	return (*this);
+}
+
+std::string	const			ShrubberyCreationForm::getTarget(void) const
+{
+	return (this->_target);
+}
+
+void						ShrubberyCreationForm::action(void) const
 {
 	std::ofstream	outfile;
 

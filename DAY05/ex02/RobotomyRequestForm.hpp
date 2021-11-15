@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 13:08:42 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/10/15 08:20:17 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/11/15 23:44:16 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,17 @@ class RobotomyRequestForm : public Form
 {
 private:
 	std::string			_target;
-	RobotomyRequestForm(void);
 public:
+	RobotomyRequestForm(void);
 	RobotomyRequestForm(std::string const &target);
+	RobotomyRequestForm(RobotomyRequestForm const &rhs);
 	~RobotomyRequestForm(void);
 
-	virtual void	action(void) const;
+	RobotomyRequestForm		&operator=(RobotomyRequestForm const &rhs);
+
+	std::string	const	getTarget(void) const;
+	void				setTarget(std::string &target);
+	virtual void		action(void) const;
 };
 
 #endif
