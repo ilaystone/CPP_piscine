@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 13:01:04 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/10/15 13:47:38 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/11/16 08:03:34 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ class Converter
 {
 private:
 	std::string		_string_literal;
-	Converter(void);
 public:
 	class CannotCovertException : public std::exception
 	{
@@ -38,6 +37,7 @@ public:
 			return ("Non displayable");
 		}
 	};
+	Converter(void);
 	Converter(std::string const &sl);
 	Converter(Converter const &rhs);
 	~Converter(void);

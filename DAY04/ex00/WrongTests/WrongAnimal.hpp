@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 16:00:02 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/11/11 00:09:02 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/11/13 01:13:46 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 class WrongAnimal
 {
 private:
-	WrongAnimal(void);
 protected:
 	std::string		_type;
+	WrongAnimal(void);
 public:
 	WrongAnimal(std::string const &type);
 	WrongAnimal(WrongAnimal const &rhs);
