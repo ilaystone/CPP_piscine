@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 11:42:55 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/11/15 23:32:04 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/11/16 01:00:39 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ public:
 	};
 	Form(Form const &rhs);
 	Form(std::string const &name, int const gts, int const gte);
-	~Form(void);
+	virtual ~Form(void);
 
 	Form					&operator=(Form const &rhs);
 
