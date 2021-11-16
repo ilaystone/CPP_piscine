@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 08:50:34 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/10/15 09:50:00 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/11/16 01:04:37 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,23 @@ Intern::Intern(void)
 	return ;
 }
 
+Intern::Intern(Intern const &rhs)
+{
+	*this = rhs;
+	return ;
+}
+
 Intern::~Intern(void)
 {
 	return ;
+}
+
+Intern	&Intern::operator=(Intern const &rhs)
+{
+	this->_form_names[0] = rhs._form_names[0];
+	this->_form_names[1] = rhs._form_names[1];
+	this->_form_names[2] = rhs._form_names[2];
+	return (*this);
 }
 
 Form	*Intern::createForm(std::string const &type, std::string const &target)

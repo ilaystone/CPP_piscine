@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 08:50:14 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/10/15 09:50:22 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/11/16 01:00:21 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,11 @@ public:
 			return ("\"Form request passed not found\"");
 		}
 	};
-	
 	Intern(void);
-	~Intern(void);
+	Intern(Intern const &rhs);
+	virtual ~Intern(void);
+
+	Intern	&operator=(Intern const &rhs);
 
 	Form	*makeForm(std::string const &type, std::string const &target);
 };
