@@ -6,7 +6,7 @@
 #    By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/07 12:01:12 by ikhadem           #+#    #+#              #
-#    Updated: 2021/11/09 11:25:44 by ikhadem          ###   ########.fr        #
+#    Updated: 2021/11/16 08:15:34 by ikhadem          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ FLAG		=	-Wall -Wextra -Werror -std=c++98
 
 SRC			=	main.cpp \
 
-HDR			=	EasyFind.template.cpp \
+HDR			=	EasyFind.template.hpp \
 
 OBJ			=	$(SRC:.cpp=.o)
 

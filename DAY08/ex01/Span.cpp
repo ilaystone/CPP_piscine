@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 11:46:26 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/11/13 04:05:44 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/11/18 02:20:09 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,18 +43,30 @@ int		Span::getSize(void) const
 void	Span::addNumber(int n)
 {
 	if (this->_data.size() == this->_size)
-		throw Span::SpanFullException();
+		throw Span::SpanOutOfBounds();
 	this->_data.push_back(n);
+	std::sort(this->_data.begin(), this->_data.end());
 	return ;
 }
 
 int		Span::shortestSpan(void) const
 {
-	return (*(std::min_element(this->_data.begin(), this->_data.end())));
+	if (this->_size == 0 || this->_size == 1)
+		throw (Span::SpanConnotCount());
+	int		min_dist = std::numeric_limits<int>::max();
+	for (int i = 0; i < (int)(this->_data.size() - 1); i++)
+	{
+		int		current = std::abs(this->_data[i] - this->_data[i + 1]);
+		if (current < min_dist)
+			min_dist = current;
+	}
+	return (min_dist);
 }
 
 int		Span::longestSpan(void) const
 {
-	return (*(std::max_element(this->_data.begin(), this->_data.end())));
+	int		max_value = *std::max_element(this->_data.begin(), this->_data.end());
+	int		min_value = *std::min_element(this->_data.begin(), this->_data.end());
+	return (std::abs(max_value - min_value));
 }
 

@@ -5,39 +5,38 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/13 00:35:07 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/11/18 02:20:38 by ikhadem          ###   ########.fr       */
+/*   Created: 2021/11/16 08:19:36 by ikhadem           #+#    #+#             */
+/*   Updated: 2021/11/18 01:49:15 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Span.hpp"
-#include <cstdlib>
-#include <ctime>
+#include "MutantStack.hpp"
 #include <iostream>
-
-#ifndef ELMNT_NBR
-#define ELMNT_NBR 10000
-#endif
+#include <list>
 
 int		main(void)
 {
-	std::cout << "Subject Test" << std::endl;
-	Span sp = Span(5);
-	sp.addNumber(5);
-	sp.addNumber(3);
-	sp.addNumber(17);
-	sp.addNumber(9);
-	sp.addNumber(11);
-	std::cout << sp.shortestSpan() << std::endl;
-	std::cout << sp.longestSpan() << std::endl;
-	std::cout << "Exception Test" << std::endl;
-	try
+	MutantStack<int> mstack;
+	mstack.push(5);
+	mstack.push(17);
+	// std::cout << mstack.top() << std::endl;
+	// mstack.pop();
+	std::cout << mstack.size() << std::endl;
+	mstack.push(3);
+	mstack.push(5);
+	mstack.push(737);
+	//[...]
+	mstack.push(0);
+	MutantStack<int>::iterator it = mstack.begin();
+	MutantStack<int>::iterator ite = mstack.end();
+	++it;
+	--it;
+	std::cout << "ALL ELEMENTS:" << std::endl;
+	while (it != ite)
 	{
-		sp.addNumber(0);
+		std::cout << *it << std::endl;
+		++it;
 	}
-	catch (std::exception & e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	return (0);
+	std::stack<int> s(mstack);
+	return 0;
 }
